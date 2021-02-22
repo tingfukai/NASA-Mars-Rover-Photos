@@ -1,9 +1,51 @@
+
+div#app > nav{
+
+   background-color:lightslategrey;
+   margin:0px;
+   padding: 10px;
+  
+}
+
+div#app > nav > span{
+
+    font-size: 20px;
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+.newdate{
+
+    margin-left: 900px;
+    
+    
+}
+
+.polaroid{
+    width: 210px;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    float: left;
+}
+
+.content{   
+    
+    font-size:12px;
+    padding: 0px 10px 1px;
+    margin-top: 1%;
+    margin-bottom: 10%;
+    line-height: 0.5;
+}
+
 .Imgsize{
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    
+    border-radius: 8px;
     padding: 5px;
+    padding-bottom: 0px;
     width: 200px;
     height:180px;
-    float: left;
     background-size: cover;
 }
+

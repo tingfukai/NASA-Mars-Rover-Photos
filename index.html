@@ -15,18 +15,26 @@
 <body>
     <div class="nav-bar"></div>
     <div id="app">
+      <nav>
+
+       <span>
         {{message}}
-        <input type="date" v-model="newdate.inputdata" class="Edate">
-        {{newdate.mydate}}
-    
-        <div v-for="info in info" max=25>
+       </span>
+
+        <input type="date" v-model="newdate.inputdata" class="newdate">
+
+      </nav>
+
+        <div v-for="info in info" :key="info.img" class="polaroid">
             
             <img :src="info.img_src" alt="Nasa img" class="Imgsize">
+            <div class="content">
+                <p>Rover_name: {{info.rover.name}}</p>
+                <p>landing date: {{info.rover.landing_date}} </p>
+                <p>launch date: {{info.rover.launch_date}}</p>
+            </div>
 
         </div>
-
-
-
          
         
 

@@ -4,7 +4,7 @@ var app = new Vue({
     data(){
 
         var inputdata = {}
-        inputdata.mydate = '2015-02-11';
+        inputdata.mydate = '2015-06-03';
         
         return{
             message: 'NASA MARS ROVER PHOTO',
