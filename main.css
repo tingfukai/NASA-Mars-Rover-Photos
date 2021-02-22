@@ -1,0 +1,9 @@
+.Imgsize{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 200px;
+    height:180px;
+    float: left;
+    background-size: cover;
+}

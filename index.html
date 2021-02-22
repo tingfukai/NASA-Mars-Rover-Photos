@@ -7,6 +7,7 @@
     <title>My Frist NASA-SPA</title>
 
     <script src="./vue.js"></script>
+    <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
     
@@ -16,9 +17,16 @@
     <div id="app">
         {{message}}
         <input type="date" v-model="newdate.inputdata" class="Edate">
-        {{newdate.inputdata}}
-      
-                {{info}}
+        {{newdate.mydate}}
+    
+        <div v-for="info in info" max=25>
+            
+            <img :src="info.img_src" alt="Nasa img" class="Imgsize">
+
+        </div>
+
+
+
          
         
 
