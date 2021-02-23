@@ -20,11 +20,11 @@
        <span>
         {{message}}
        </span>
-
-        <input type="date" v-model="newdate" class="newdate" v-on:click="Getdata(newdate)">
+       {{info.length}}
+       <input type="date" v-model="newdate" class="newdate" v-on:change="Getdata(newdate)">
         
       </nav>
-  
+        
         <div v-for="info in info" :key="info.img" class="polaroid">
             
             <img :src="info.img_src" alt="Nasa img" class="Imgsize">
