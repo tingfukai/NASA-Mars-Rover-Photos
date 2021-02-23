@@ -21,20 +21,33 @@
         {{message}}
        </span>
        {{info.length}}
-       <input type="date" v-model="newdate" class="newdate" v-on:change="Getdata(newdate)">
+       <input type="date" v-model="newdate" class="newdate" v-on:change="Getdata(newdate,count)">
         
       </nav>
-        
-        <div v-for="info in info" :key="info.img" class="polaroid">
+          
+            <div v-for="info in info" :key="info.img" class="polaroid">
             
-            <img :src="info.img_src" alt="Nasa img" class="Imgsize">
-            <div class="content">
-                <p>Rover_name: {{info.rover.name}}</p>
-                <p>landing date: {{info.rover.landing_date}} </p>
-                <p>launch date: {{info.rover.launch_date}}</p>
+                <img :src="info.img_src" alt="Nasa img" class="Imgsize">
+                <div class="content">
+                    <p>Rover_name: {{info.rover.name}}</p>
+                    <p>landing date: {{info.rover.landing_date}} </p>
+                    <p>launch date: {{info.rover.launch_date}}</p>
+                </div>
+
             </div>
 
-        </div>
+        
+
+            <button v-on:click="PrevPage(newdate,count)">Previous</button>
+            <p>
+                {{count}}
+            </p>
+            <button v-on:click="NextPage(newdate,count)">Next</button>
+    
+
+
+        
+        
          
         
 
