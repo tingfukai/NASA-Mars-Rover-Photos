@@ -24,7 +24,8 @@ div#app > nav > span{
 .polaroid{
     width: 210px;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-    margin-left: 20px;
+    margin-left: 30px;
+   
     margin-bottom: 12px;
     border-radius: 8px;
     float: left;
