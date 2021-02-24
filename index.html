@@ -4,53 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Frist NASA-SPA</title>
 
     <script src="./vue.js"></script>
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
-    
+
 </head>
 <body>
-    <div class="nav-bar"></div>
-    <div id="app">
-      <nav>
 
-       <span>
-        {{message}}
-       </span>
-       {{info.length}}
-       <input type="date" v-model="newdate" class="newdate" v-on:change="Getdata(newdate,count)">
-        
-      </nav>
-          
+    <div id="app">
+            <nav>
+
+                <span>{{Header}}</span>
+
+                <input type="date" v-model="newdate" class="newdate" v-on:change="Getdata(newdate,count)">
+
+            </nav>
+
+            <span v-if="info.length == 0" class="No_Photo">
+
+            No photos, Please choose another date!
+
+            </span>
+
             <div v-for="info in info" :key="info.img" class="polaroid">
             
                 <img :src="info.img_src" alt="Nasa img" class="Imgsize">
+                
                 <div class="content">
+                    <p>Date: {{info.earth_date}}</p>
+                    <p>Photo ID: {{info.id}}</p>
+                    <p>{{info.camera.full_name}}</p>
                     <p>Rover_name: {{info.rover.name}}</p>
-                    <p>landing date: {{info.rover.landing_date}} </p>
-                    <p>launch date: {{info.rover.launch_date}}</p>
+                    <p style="color: gray;">landing date: {{info.rover.landing_date}} </p>
+                    <p style="color: grey;">launch date: {{info.rover.launch_date}}</p>
                 </div>
 
             </div>
 
-        
-
-            <button v-on:click="PrevPage(newdate,count)">Previous</button>
-            <p>
+            <div class="pagesB" v-if="info.length >=25 || count > 1">
+                <button v-on:click="PrevPage(newdate,count)" class="Button">Previous</button>
+                <span>
                 {{count}}
-            </p>
-            <button v-on:click="NextPage(newdate,count)">Next</button>
-    
-
-
-        
-        
-         
-        
-
+                </span>
+                <button v-on:click="NextPage(newdate,count)" class="Button">Next</button>
+            </div>
     </div>
     <script src="./main.js"></script>
 </body>

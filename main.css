@@ -2,14 +2,14 @@
 div#app > nav{
 
    background-color:lightslategrey;
-   margin:0px;
    padding: 10px;
+   margin: 0;
   
 }
 
 div#app > nav > span{
 
-    font-size: 20px;
+    font-size: x-large;
     margin-left: 30px;
     font-weight: bold;
 }
@@ -18,17 +18,17 @@ div#app > nav > span{
 
     margin-left: 900px;
     
-    
 }
 
 .polaroid{
+
+    float: left;
     width: 210px;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
     margin-left: 30px;
-    margin-bottom: 15px;
-    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 8px;
-    float: left;
 }
 
 .content{   
@@ -42,11 +42,34 @@ div#app > nav > span{
 
 .Imgsize{
     
-    border-radius: 8px;
-    padding: 5px;
-    padding-bottom: 0px;
     width: 200px;
     height:180px;
+    padding: 5px;
+    padding-bottom: 0px;
+    border-radius: 8px;
     background-size: cover;
+}
+.pagesB{
+
+    position: fixed;
+    bottom: 10px;
+    left: 43%;
+}
+
+.Button{
+
+    font-size: 50x;
+    border-radius: 8px;
+    border-color: rgba(0, 0, 0, 0.2);
+    background-color: seashell;
+}
+
+.No_Photo{
+
+    margin:20px;
+    display: flex;
+    font-weight: bold;
+    font-size: x-large;
+    color: red;
 }
 

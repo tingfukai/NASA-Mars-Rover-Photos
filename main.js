@@ -3,7 +3,7 @@ var app = new Vue({
     el: '#app',
     data(){
         return{
-            message: 'NASA MARS ROVER PHOTO',
+            Header: 'NASA MARS ROVER PHOTO',
             newdate: '2021-02-10',
             info:[],
             check:[],
@@ -34,16 +34,12 @@ var app = new Vue({
                 alert('This is the first page.')
                 this.count = this.count + 1;
                 currentpage = currentpage +1;
-
             }
             else{
                 axios.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='+this.newdate+ '&page='+ currentpage +'&api_key=vzIPsA1gg6ssPjSfCKm9wNwTz0OFjRnbSX4isLbo')
                 .then((response) => { 
                 this.info = response.data.photos}).then(console.log(this.info))
-            }
-
-            
-            
+            }  
         },
 
         NextPage(date,currentpage)
@@ -64,20 +60,6 @@ var app = new Vue({
                 .then((response) => { 
                 this.info = response.data.photos}).then(console.log(this.info))
             }
- 
-               
-
-    
-
         },
-
-
-        
     },
-
-    
-
-
-
-
 });
