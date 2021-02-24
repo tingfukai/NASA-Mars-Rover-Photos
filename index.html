@@ -50,6 +50,7 @@
             <!--Previous and Next Button-->
             <!--Request Next page and previous page data-->
             <div class="pagesB" v-if="info.length >=25 || count > 1">
+                
                 <button v-on:click="PrevPage(newdate,count)" class="Button">Previous</button>
                 <!--page count-->
                 <span>{{count}}</span>
