@@ -19,20 +19,23 @@
 
                 <span>{{Header}}</span>
 
+                <!--Request a new api data when User change the date-->
                 <input type="date" v-model="newdate" class="newdate" v-on:change="Getdata(newdate,count)">
 
             </nav>
 
+            <!--When the User choose a date that is no photos inside-->
             <span v-if="info.length == 0" class="No_Photo">
 
             No photos, Please choose another date!
 
             </span>
-
+            
+            <!--Image Box. Include the details of the photo-->
             <div v-for="info in info" :key="info.img" class="polaroid">
             
                 <img :src="info.img_src" alt="Nasa img" class="Imgsize">
-                
+
                 <div class="content">
                     <p>Date: {{info.earth_date}}</p>
                     <p>Photo ID: {{info.id}}</p>
@@ -44,14 +47,19 @@
 
             </div>
 
+            <!--Previous and Next Button-->
+            <!--Request Next page and previous page data-->
             <div class="pagesB" v-if="info.length >=25 || count > 1">
                 <button v-on:click="PrevPage(newdate,count)" class="Button">Previous</button>
-                <span>
-                {{count}}
-                </span>
+                <!--page count-->
+                <span>{{count}}</span>
+
                 <button v-on:click="NextPage(newdate,count)" class="Button">Next</button>
             </div>
+
     </div>
+
     <script src="./main.js"></script>
+
 </body>
 </html>
