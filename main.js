@@ -13,26 +13,24 @@ var app = new Vue({
         } 
     },
 
-    //Delay 4sec
-    mounted(){
-
-        setTimeout(() =>{
-            this.shownophoto = true;
-        }, 4000)
-        
-    },
-
     methods: {
         //When Date changed
         Getdata:function(date){
 
+            //reset
+            this.shownophoto = false
             this.page = 1
+
             axios.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='+date+ '&page='+ this.page +'&api_key=vzIPsA1gg6ssPjSfCKm9wNwTz0OFjRnbSX4isLbo')
             .then((response) => { 
             this.info = response.data.photos}).then(console.log(this.info))
 
             this.count = 1
-
+            
+            //set delay 2sec to show the message if no photos
+            setTimeout(() =>{
+                this.shownophoto = true;
+            }, 2000)
 
         },
         //For Previous Button
