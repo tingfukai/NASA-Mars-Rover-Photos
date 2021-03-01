@@ -3,7 +3,7 @@ var app = new Vue({
     el: '#app',
     data(){
         return{
-            Header: 'NASA MARS ROVER PHOTO',
+            Header: 'NASA MARS ROVER',
             newdate: 'YYYY-MM-DD',
             Today: new Date().toISOString().slice(0,10),
             shownophoto: false,

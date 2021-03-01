@@ -24,11 +24,20 @@
                 <input type="date" v-model="newdate" class="newdate" :min="2012-08-06" :max="Today" v-on:change="Getdata(newdate)">
 
             </nav>
-     
+            
+            <!--First Page-->
+            <div v-if="count == 0" class="Firstpage">
+                <h1>Welcome to</h1>
+                <h2>NASA Mars Rover Gallery</h2>
+                <h3>Please select a date.</h3>
+
+            </div>
+
              <!--When the User choose a date that is no photos inside-->
              <div v-if="info.length == 0 && count == 1" class="description">
 
                 <p v-if="shownophoto">No photos show on {{newdate}}. Please choose another date.</p>
+
             </div>
 
             <!--Image Box. Include the details of the photo-->

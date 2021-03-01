@@ -14,6 +14,14 @@ div#app > nav > span{
     font-weight: bold;
 }
 
+.Firstpage{
+
+    font-size: 30px;
+    text-align: center;
+    margin-top: 8%;
+    color:maroon;
+}
+
 .newdate{
 
     margin-left: 900px;
