@@ -20,20 +20,20 @@
                 <span>{{Header}}</span>
 
                 <!--Request a new api data when User change the date-->
-                <input type="date" v-model="newdate" class="newdate" v-on:change="Getdata(newdate,count)">
+                <!--Min date = Rover landing date, Max date = today-->
+                <input type="date" v-model="newdate" class="newdate" :min="2012-08-06" :max="Today" v-on:change="Getdata(newdate)">
 
             </nav>
+     
+             <!--When the User choose a date that is no photos inside-->
+             <div v-if="info.length == 0 && count == 1" class="description">
 
-            <!--When the User choose a date that is no photos inside-->
-            <span v-if="info.length == 0" class="No_Photo">
+                <p v-if="shownophoto">No photos show on {{newdate}}. Please choose another date.</p>
+            </div>
 
-            No photos, Please choose another date!
-
-            </span>
-            
             <!--Image Box. Include the details of the photo-->
             <div v-for="info in info" :key="info.img" class="polaroid">
-            
+
                 <img :src="info.img_src" alt="Nasa img" class="Imgsize">
 
                 <div class="content">
@@ -44,18 +44,17 @@
                     <p style="color: gray;">landing date: {{info.rover.landing_date}} </p>
                     <p style="color: grey;">launch date: {{info.rover.launch_date}}</p>
                 </div>
-
             </div>
 
             <!--Previous and Next Button-->
             <!--Request Next page and previous page data-->
-            <div class="pagesB" v-if="info.length >=25 || count > 1">
+            <div class="pagesB" v-if="info.length >=25 || page > 1">
                 
-                <button v-on:click="PrevPage(newdate,count)" class="Button">Previous</button>
-                <!--page count-->
-                <span>{{count}}</span>
+                <button v-on:click="PrevPage()" class="Button">Previous</button>
+                <!--page page-->
+                <span>{{page}}</span>
 
-                <button v-on:click="NextPage(newdate,count)" class="Button">Next</button>
+                <button v-on:click="NextPage()" class="Button">Next</button>
             </div>
 
     </div>
