@@ -21,7 +21,7 @@
 
                 <!--Request a new api data when User change the date-->
                 <!--Min date = Rover landing date, Max date = today-->
-                <input type="date" v-model="newdate" class="newdate" :min="2012-08-06" :max="Today" v-on:change="Getdata(newdate)">
+                <input type="date" v-model="newdate" class="newdate" min="2012-08-06" :max="Today" v-on:change="Getdata(newdate)">
 
             </nav>
             
