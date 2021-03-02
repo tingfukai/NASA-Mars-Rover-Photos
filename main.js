@@ -27,10 +27,10 @@ var app = new Vue({
 
             this.count = 1
             
-            //set delay 2sec to show the message if no photos
+            //set delay 1sec to show the message if no photos
             setTimeout(() =>{
                 this.shownophoto = true;
-            }, 2000)
+            }, 1000)
 
         },
         //For Previous Button
